@@ -14,4 +14,11 @@
 ## 学习了用Github项目管理
 - 上传push下载pull，在phpStorm中用 `Ctrl+Shift+K`
 - Git的使用，Press `Ctrl+K`做Push.
-
+## 条件判断时False 等效值
+下面这些值将被计算出 false (also known as [Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) values):
+- `false`
+- `undefined`
+- `null`
+- `0`
+- `NaN`
+- 空字符串（`""`）
