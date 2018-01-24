@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parseInt函数学习</title>
+</head>
+<body>
+<script>
+//来源：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+var a= parseInt(4.7 * 1e22, 10); // Very large number becomes 4
+var b = parseInt(0.00000000000434, 10); // Very small number becomes 4
+var c=parseInt('45px',10);
+var d=parseInt('s65',10);//前面有其他字符，就不能转化成数字了
+document.write(a+'<br/>'+b+'<br/>'+c+'<br/>'+d);
+
+</script>
+</body>
+</html>
