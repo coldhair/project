@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DateFormat</title>
+</head>
+<body>
+<script>
+    // 获取当前的时间并格式化
+    function getCurrentDate() {
+        var d = new Date();
+        /*
+           var y=d.getYear()+1900;//getYear已经弃用了。
+        */
+        var year = d.getFullYear();
+        var month = add_zero(d.getMonth()+1);
+        var day= add_zero(d.getDate());
+        var hour=add_zero(d.getHours());
+        var minute=add_zero(d.getMinutes());
+        var second=add_zero(d.getSeconds());
+            arr=[year,month,day,hour,minute,second];//返回一个数组
+        return arr;
+    }
+function add_zero(temp){
+        if(temp<10){
+            return "0"+temp;
+        }else {
+            return temp;
+        }
+}
+    var t=getCurrentDate();
+    document.write(t);
+
+</script>
+
+</body>
+</html>
