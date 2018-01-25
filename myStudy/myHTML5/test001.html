@@ -2,7 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <!--设置无缓存-->
+    <meta http-equiv="pragma" content="no-cache">
     <title>Title</title>
+    <link rel="icon" href="demo.gif" type="image/gif" sizes="16*16">
 </head>
 <body>
 <form action="">
@@ -17,10 +20,31 @@
         <option value="Volvo"></option>
     </datalist>
 
+<p hidden>这段内容可以用hidden属性隐藏</p>
 
+    <p>有序列表的倒序排列</p>
+    <ol start="50" reversed>
+        <li>咖啡</li>
+        <li>红茶</li>
+        <li>牛奶</li>
+    </ol>
 
-    <p></p>
-    <p></p>
+    <p>以下演示可修改的数据内容</p>
+
+    <table >
+        <tr>
+            <td>姓名</td>
+            <td>电话</td>
+            <td>单位</td>
+        </tr>
+        <tr contenteditable="true">
+            <td>吕艳朋</td>
+            <td>15106925799</td>
+            <td>疾控中心</td>
+        </tr>
+    </table>
+<p contenteditable="true">可修改的内容</p>
+
     <section></section>
     <article></article>
     <aside></aside>
