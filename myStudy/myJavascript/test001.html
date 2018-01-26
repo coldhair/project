@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>事件流-事件冒泡</title>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="按钮1" id="btn1" onclick="showMessage()">
+    <input type="button" value="按钮2" id="btn2" >
+    <input type="button" value="按钮3" id="btn3" >
+    <input type="button" value="按钮4" id="btn4" >
+    <a href="http://www.piyas.com" id="go">皮牙思</a>
+</div>
+<p>事件冒泡：即事件最开始由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播至最不具体的元素（文档）。</p>
+<script>
+    function showMessage(ev) {
+        alert(ev.target+' '+ev.type+'→ Hello world!');
+        ev.stopPropagation();//阻止事件冒泡
+    }
+    function showBox() {
+        alert("这是ID为box的Div的事件！");
+    }
+
+    //阻止默认事件
+    function stopGoto(ev) {
+        ev.stopPropagation();
+        ev.preventDefault(); //阻止默认事件
+    }
+
+    //DOM 0级事件处理程序
+    var btn2=document.getElementById('btn2');
+    btn2.onclick=function(){  // 左侧的 btn2.onclick 即相当于给按钮添加了onclick属性，也可以调用已有函数。
+        alert('这是通过DOM 0级添加的事件！');
+    };
+    // 如果需要取消btn2的按钮事件，可这样写代码。
+    btn2.onclick=null;//删除事件程序
+
+    //DOM 2级事件处理程序
+    var btn3=document.getElementById('btn3');
+    btn3.addEventListener('click',showMessage,false);//第一个参数要处理的事件名，所有的"on"都不要写了。
+    //添加第二个事件处理程序，点击一次，触发了两个程序
+    btn3.addEventListener('click',function(){
+        alert(this.value);//this引用被触发的元素。
+    },false);
+    btn3.removeEventListener('click',showMessage,false);//addEventListener添加的事件，只能通过removeEventListener来删除。
+
+    //跨浏览器事件的使用
+    var eventUtil={
+        //添加句柄
+        addHandler:function (element,type,handler) {
+            if(element.addEventListener){
+                element.addEventListener(type,handler,false);
+            }else if(element.attachEvent){
+                element.attachEvent('on'+type,handler);
+            }else{
+                element['on'+type]=handler;
+            }
+        },
+        removeHandler:function (element,type,handler) {
+            if(element.removeEventListener){
+                element.removeEventListener(type,handler,false);
+            }else if(element.detachEvent){
+                element.detachEvent('on'+type,handler);
+            }else{
+                element['on'+type]=null;
+            }
+        }
+    };
+    var btn4=document.getElementById('btn4');
+    eventUtil.addHandler(btn4,'click',showMessage);
+    //eventUtil.removeHandler(btn4,'click',showMessage);
+
+    var box=document.getElementById('box');
+    eventUtil.addHandler(box,'click',showBox);
+
+    //阻止默认事件
+    var a=document.getElementById('go');
+    eventUtil.addHandler(a,'click',stopGoto);
+
+</script>
+
+<!--2018.01.26-->
+</body>
+</html>
