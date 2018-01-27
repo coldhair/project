@@ -51,6 +51,7 @@ function playFun() {
 所以就不能用了，注释掉。*/
     //this.style.background="#999";
     play.style.background="#999";
+    play.style.cursor="none";
 
     //把 flag=1，为键盘事件做判断
     flag=1;
@@ -61,6 +62,7 @@ function stopFun() {
     clearInterval(timer);//timer在开始已经声明为了全局变量
     var play=document.getElementById('play');
     play.style.background="#1316ad";
+    play.style.cursor="pointer";
 
     //把变回0，为键盘事件做判断
     flag=0;
