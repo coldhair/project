@@ -5,3 +5,4 @@
 
 - 学习了HTML5可编辑内容的保存，myStudy/myHTML5/contenteditable。2018.01.25
 
+- PHP/MySQL/HTML/CSS/Javascript/JSON/正则表达式/Ajax/Laravel/
