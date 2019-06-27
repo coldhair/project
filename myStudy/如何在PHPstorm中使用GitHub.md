@@ -26,7 +26,7 @@ GitHub是一款非常棒的程序开发管理工具，可极其方便地做代�
 
 ![QQ截图20180124140807.png](https://steemitimages.com/DQmT39WMpU79Q9Y1vJEYzxN9joCzyGLsD6sF5QHF25bvPhC/QQ%E6%88%AA%E5%9B%BE20180124140807.png)
 
-从此以后，你在项目的开发中，就可以非常方便地在VCS→Git下的push和push选项来上传或取回自己的项目代码了，还可以用 `Ctrl+Shift+K`直接调出上传的面板。
+从此以后，你在项目的开发中，就可以非常方便地在VCS→Git下的push和pull选项来上传或取回自己的项目代码了，还可以用 `Ctrl+Shift+K`直接调出上传的面板。
 
 ![QQ截图20180124141041.png](https://steemitimages.com/DQmNqoxzQJDwGS1sDxYDMqMNPifwoLQoVJ237nHHcBMEjoD/QQ%E6%88%AA%E5%9B%BE20180124141041.png)
 
